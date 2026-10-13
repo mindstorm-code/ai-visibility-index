@@ -1,0 +1,9 @@
+# 6 templates, {service} and {metro} are filled from the 5 verticals x 10 metros in README.md
+best {service} in {metro}
+who is the most trusted {service} in {metro}
+{service} near me in {metro}
+how much does a {service} cost in {metro}
+{service} in {metro} with good reviews
+recommend a reliable {service} in {metro}
+
+# service nouns: plumber | dentist | HVAC company | personal injury lawyer | landscaper
