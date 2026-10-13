@@ -1,0 +1,59 @@
+{
+  "n_rows": 857,
+  "n_cited": 454,
+  "n_control": 403,
+  "n_sites": 532,
+  "h1_schema": {
+    "feature": "local",
+    "cited_with": 342,
+    "cited_without": 112,
+    "control_with": 307,
+    "control_without": 96,
+    "share_with_feature_among_cited": 0.753,
+    "share_with_feature_among_control": 0.762,
+    "or": 0.96,
+    "lo": 0.7,
+    "hi": 1.31
+  },
+  "h2_faq": {
+    "feature": "faq",
+    "cited_with": 211,
+    "cited_without": 243,
+    "control_with": 186,
+    "control_without": 217,
+    "share_with_feature_among_cited": 0.465,
+    "share_with_feature_among_control": 0.462,
+    "or": 1.01,
+    "lo": 0.77,
+    "hi": 1.33
+  },
+  "logistic": {
+    "adjusted_for": "vertical fixed effects",
+    "h1": {
+      "term": "local_schema",
+      "odds_ratio": 1.01,
+      "ci95": [
+        0.72,
+        1.41
+      ]
+    },
+    "h2": {
+      "term": "faq_block",
+      "odds_ratio": 1.08,
+      "ci95": [
+        0.81,
+        1.45
+      ]
+    }
+  },
+  "not_tested": [
+    "H3 (NAP consistency): requires per-business directory lookups; not feasible at this scale",
+    "domain-age bucket control: dropped, see DEVIATIONS.md"
+  ],
+  "caveats": [
+    "Rows are (query x site); the same site can appear in many rows; standard errors are not clustered, so intervals are optimistic",
+    "Control set = organic top-10 sites not cited by the engine for that query",
+    "One engine (Gemini + Google Search grounding), US metros, five verticals",
+    "Feature detection is a homepage heuristic (JSON-LD parse; FAQ = FAQPage schema, <details>, or an FAQ heading)"
+  ]
+}
